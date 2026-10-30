@@ -92,7 +92,7 @@ The sentence splitter knows Turkish abbreviations, ordinals and decimals, and ch
 ```
 >>> for c in chunk_text(text, max_chars=70): print(c.start, c.end, repr(c.text))
 0 52 'Dr. Ayşe Kurgu 15. maddeyi okudu. Tutar 3.5 TL oldu.'
-53 81 'Prof. Dr. Örnek itiraz etti!'
+34 81 'Tutar 3.5 TL oldu. Prof. Dr. Örnek itiraz etti!'
 82 132 'Karar, örn. bugünkü oturumda, yeniden görüşülecek.'
 ```
 
@@ -103,7 +103,7 @@ The sentence splitter knows Turkish abbreviations, ordinals and decimals, and ch
 - **Verbs are not analysed.** `kaybettim` doesn't reach `kayıp`, and `gidiyorum` doesn't reach `gitti`. `elim uyuştu` doesn't find `uyuşma` in the comparison above.
 - **Derivation is untouched.** `mantolamak` and `mantolama` are different keys, as are `hesaplama` and `hesaplanır`.
 - **It conflates unrelated words:** `kapı` / `kap`, `kale` / `kal`, `hasta` / `has`. Stripping a final vowel gets recall and pays for it here. Tests pin these so they stay documented.
-- **Words outside the short lists go wrong.** Vowel-dropping nouns work only for a list of 19 (`şehir`/`şehri`), and suffix look-alikes are protected only for a list of about 80 (`altın`, `kurum`). `n`-final nouns outside the list can split between `-ı` and `-nı` readings.
+- **Words outside the short lists go wrong.** Vowel-dropping nouns work only for a list of 19 (`şehir`/`şehri`), and suffix look-alikes are protected only for a list of 95 (`altın`, `kurum`). `n`-final nouns outside the list can split between `-ı` and `-nı` readings.
 - **The result is a key, not a lemma.** Don't show `mas` to a person.
 
 Other limits:
