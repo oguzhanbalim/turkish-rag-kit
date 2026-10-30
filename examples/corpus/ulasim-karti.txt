@@ -1,0 +1,3 @@
+Örnekşehir ulaşım kartı otobüs ve tramvayda geçerlidir. Kayıp kartlar için yeni kart başvurusu yapılır. Kartın bakiyesi yeni karta aktarılır.
+
+Öğrenci kartı için okul belgesi istenir.
